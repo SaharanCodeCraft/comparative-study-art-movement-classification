@@ -1,17 +1,24 @@
 # 🎨 A Comparative Study of Pretrained Models and Optimized EfficientNet for Art Movement Classification
 
+![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
+![PyTorch](https://img.shields.io/badge/Framework-PyTorch-red.svg)
+![CUDA](https://img.shields.io/badge/Accelerated-CUDA-green.svg)
+![Status](https://img.shields.io/badge/Status-Research%20Study-yellow.svg)
+
+---
+
 ## 📌 Overview
 
-This repository presents a research-oriented comparative study of pretrained deep convolutional neural networks for fine-grained art movement classification.
+This repository presents a research-oriented comparative study of pretrained deep convolutional neural networks for **fine-grained art movement classification**.
 
-The study evaluates multiple pretrained architectures (ResNet50, DenseNet121, EfficientNet B0–B7) under a controlled experimental setup and further optimizes EfficientNet-B7 through principled fine-tuning and regularization techniques.
+The study evaluates multiple pretrained architectures under a controlled experimental framework and further optimizes **EfficientNet-B7** through principled fine-tuning and regularization techniques.
 
-The objective is to analyze:
+### Research Objectives
 
-- Model scaling behavior across EfficientNet variants  
-- Representation capacity vs generalization trade-offs  
-- Transfer learning strategies for stylistic visual classification  
-- Performance gains through targeted optimization  
+- Analyze model scaling behavior across EfficientNet variants  
+- Study representation capacity vs generalization trade-offs  
+- Evaluate transfer learning strategies for stylistic visual classification  
+- Measure performance gains through targeted optimization  
 
 ---
 
@@ -22,62 +29,82 @@ Art movement classification is a challenging computer vision task due to:
 - High intra-class variability  
 - Strong stylistic similarity across classes  
 - Texture- and pattern-driven visual semantics  
+- Subtle compositional differences between movements  
 
-This project investigates how pretrained CNN architectures perform under these fine-grained visual constraints and how optimization strategies impact generalization performance.
+Unlike object recognition tasks, stylistic classification requires models to capture fine-grained visual cues such as brush strokes, color palettes, and structural abstractions.
+
+This project investigates how pretrained CNN architectures perform under these constraints and how structured optimization impacts generalization performance.
 
 ---
 
 ## 🏗️ Methodology
 
-### Comparative Architecture Study
+### 🔬 Comparative Architecture Study
 
 Pretrained ImageNet models evaluated:
 
 - ResNet50  
 - DenseNet121  
-- EfficientNet-B0 → B7  
+- EfficientNet-B0  
+- EfficientNet-B1  
+- EfficientNet-B2  
+- EfficientNet-B3  
+- EfficientNet-B4  
+- EfficientNet-B5  
+- EfficientNet-B6  
+- EfficientNet-B7  
 
-Common experimental setup:
+### Common Experimental Setup
 
 - 80/20 train-validation split  
 - Fixed random seed for reproducibility  
 - Input resolution: 224 × 224  
-- Light data augmentation (resize, horizontal flip, normalization)  
-- CrossEntropy loss  
+- Light data augmentation:
+  - Resize
+  - Horizontal flip
+  - Normalization  
+- Loss Function: CrossEntropyLoss  
 - GPU-accelerated training (CUDA)
 
-Performance evaluation included:
+### Evaluation Metrics
 
-- Training and validation accuracy curves  
-- Training and validation loss curves  
+- Training accuracy curves  
+- Validation accuracy curves  
+- Training loss curves  
+- Validation loss curves  
 - Normalized confusion matrices  
 
 ---
 
-### EfficientNet-B7 Baseline
+## 🚀 EfficientNet-B7 Baseline Configuration
 
 - ImageNet-initialized backbone  
 - Feature extractor frozen  
-- Classifier retrained for 11 classes  
-- Optimizer: Adam (learning rate = 1e-3)  
+- Classifier retrained for 11 art movement classes  
+- Optimizer: Adam  
+- Learning rate: 1e-3  
 - Early stopping (patience = 5)  
 - Maximum epochs: 100  
 
-Baseline validation accuracy: **~64%**
+### Baseline Performance
+
+- Validation Accuracy: ~64%
 
 ---
 
-### EfficientNet-B7 Optimization
+## ⚡ EfficientNet-B7 Optimization Strategy
 
-To improve generalization:
+To improve generalization performance, the following refinements were applied:
 
-- Selective layer unfreezing  
-- Optimizer switched to AdamW  
-- Reduced learning rate  
-- Weight decay regularization  
-- Early stopping applied  
+- Selective layer unfreezing (partial fine-tuning)
+- Optimizer switched to AdamW
+- Reduced learning rate
+- Weight decay regularization
+- Early stopping retained
 
-Optimized validation accuracy: **~74%**
+### Optimized Performance
+
+- Validation Accuracy: ~74%
 
 This represents an approximate **10% absolute improvement** over the baseline configuration.
 
@@ -85,23 +112,62 @@ This represents an approximate **10% absolute improvement** over the baseline co
 
 ## 📊 Key Findings
 
-- EfficientNet scaling demonstrates improved representational capacity for fine-grained stylistic classification tasks.  
-- EfficientNet-B7 outperformed other evaluated architectures when appropriately fine-tuned.  
-- Targeted optimization significantly reduced inter-class confusion among visually similar art movements.
+- EfficientNet scaling improves representational capacity for fine-grained stylistic tasks.
+- Larger EfficientNet variants demonstrate better generalization when properly fine-tuned.
+- EfficientNet-B7 outperformed ResNet50 and DenseNet121 in this experimental setup.
+- Targeted optimization significantly reduced inter-class confusion among visually similar movements.
+- Transfer learning combined with selective fine-tuning yields strong performance gains.
+
+---
+
+## 📈 Performance Insights
+
+- Smaller EfficientNet variants train faster but exhibit lower representational depth.
+- Fully frozen backbones underperform in stylistic classification tasks.
+- Fine-tuning deeper layers improves discrimination between visually similar art movements.
+- Regularization (weight decay + learning rate reduction) enhances stability and reduces overfitting.
 
 ---
 
 ## ⚙️ Tech Stack
 
-- Python  
-- PyTorch  
-- CUDA  
-- NumPy  
-- Matplotlib  
-- Scikit-learn  
+### Programming Language
+- Python
+
+### Deep Learning Framework
+- PyTorch
+
+### Hardware Acceleration
+- CUDA
+
+### Supporting Libraries
+- NumPy
+- Matplotlib
+- Scikit-learn
+
+---
+
+## 🔬 Research Contributions
+
+- Systematic evaluation of EfficientNet scaling for stylistic classification
+- Empirical validation of optimization strategies in fine-grained visual domains
+- Demonstration of performance scaling through principled fine-tuning
+- Benchmark comparison across major pretrained CNN architectures
+
+---
+
+## 🌍 Applications
+
+Fine-grained art movement classification can support:
+
+- Digital art archiving systems  
+- Museum catalog automation  
+- Art authentication research  
+- Educational visualization tools  
+- Computational art history studies  
 
 ---
 
 ## 📬 Contact
 
-For research discussions or collaboration opportunities, feel free to connect.
+For research discussions, academic collaboration, or technical inquiries, feel free to connect.
