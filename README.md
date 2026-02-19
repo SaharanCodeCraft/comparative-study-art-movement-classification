@@ -59,10 +59,6 @@ Pretrained ImageNet models evaluated:
 - 80/20 train-validation split  
 - Fixed random seed for reproducibility  
 - Input resolution: 224 × 224  
-- Light data augmentation:
-  - Resize
-  - Horizontal flip
-  - Normalization  
 - Loss Function: CrossEntropyLoss  
 - GPU-accelerated training (CUDA)
 
