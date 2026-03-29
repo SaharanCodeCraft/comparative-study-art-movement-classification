@@ -1,4 +1,4 @@
-# 🎨 A Comparative Study of Pretrained Models and Optimized EfficientNet for Art Movement Classification
+# Parameter-Efficient Art Movement Classification 
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
 ![PyTorch](https://img.shields.io/badge/Framework-PyTorch-red.svg)
